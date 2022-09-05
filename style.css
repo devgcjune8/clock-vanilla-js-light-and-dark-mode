@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+:root {
+    --primary-clr: black;
+    --secondary-clr: white;
+}
+* {
+    box-sizing: border-box;
+} 
+html {
+    transition: all 0.43s linear;
+}
+html.dark {
+    --primary-clr: white;
+    --secondary-clr: rgb(24, 24, 49);
+}
+
+html.dark {
+    background-color: black;
+    color: var(--primary-clr);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Kanit', sans-serif;
+    height: 100vh;
+}
+
+.theme-btn {
+    cursor: pointer;
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr);
+    border: 0;
+    border-radius: 10px 2px 10px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 4.3vh;
+    font-family: inherit;
+}
+
+.clock-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 40vh;
+    height: 40vh;
+    background-color: rgb(147, 233, 248);
+    border-radius: 1em;
+    border: 12px double black;
+}
+
+.hand {
+    background-color: var(--primary-clr);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4.3em;
+    width: 4.3px;
+    transform-origin: bottom center;
+    transition: all 0.1s linear;
+    border-radius: 5px;
+}
+
+.hour.hand {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.minute.hand {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 7em;
+}
+
+.second.hand {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 7em;
+    background-color: rgb(0, 113, 141);
+}
+
+.point-centro {
+    background-color: rgb(0, 113, 141);
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+.point-centro::after {
+    content: "";
+    background-color: var(--primary-clr);
+    width: 4.3px;
+    height: 4.3px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    transform-origin: center;
+}
+
+.time-display {
+    font-size: 4rem;
+}
+
+.date-display {
+    opacity: 0.6;
+    letter-spacing: 0.43px;
+    text-transform: lowercase;
+}
+
+.date-display .date {
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr);
+    border-radius: 4px;
+    width: 25px;
+    height: 23px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    transition: all 0.7s ease;
+}
+
+.am-pm {
+    font-size: 0.43em;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    top: -11px;
+    padding: 14px;
+    background-color: var(--primary-clr);
+    border-radius: 4px;
+    width: 50px;
+    height: 40px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    transition: all 0.7s ease;
+    margin-left: 10px;
+}
